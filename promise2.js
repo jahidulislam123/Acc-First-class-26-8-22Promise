@@ -22,16 +22,16 @@ const myPromise = new Promise((resolved,rejected)=>{
 
 })
 
-
 const userId =[1,2,3,4,6];
 let userData =[];
 for (let i=0;i<userId.length;i++){ 
     const userI =userId[i]
-    myPromise.then(user=>{
-        userData.push(user)
-    })
+    userData.push(myPromise)
 }
-console.log(userData)
+Promise.all(userData).then(res=>{
+    console.log(res);
+})
+// console.log(userData)
 myPromise
 .then(res=>console.log("found in then : ",res))
 .catch(err=>console.log("found in catch :",err));
