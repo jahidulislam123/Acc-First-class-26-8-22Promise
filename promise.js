@@ -5,9 +5,10 @@
 // const myPromise = new Promise();  
 // resolved , rejected dice ei karone promise ki resolved hoice naki reject hoice
 
-const myPromise =new Promise((resolved,rejected)=>{
+const myPromise = new Promise((resolved,rejected)=>{
 
-    const user =null;
+    // const user =null;
+    const user ={id : 1}
     
     if(!user){
         rejected("something went wrong  ")
@@ -20,3 +21,9 @@ const myPromise =new Promise((resolved,rejected)=>{
 
 
 })
+
+
+myPromise
+.then(res=>console.log("found in then : ",res))
+.catch(err=>console.log("found in catch :",err));
+console.log('done');
