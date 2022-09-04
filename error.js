@@ -1,8 +1,12 @@
+import two from './errorHandler'
+// const errorHandler =require("./errorHandler.js")
+const {errorHandler,two} =require("./errorHandler.js")
+two();
 async function getData(){
     try{
         undefined.find();
-     
-
+        const emailError =new Error("Email already exits")
+        throw emailError;
     }catch(error){
         errorHandler(error);
         // console.log(error)
